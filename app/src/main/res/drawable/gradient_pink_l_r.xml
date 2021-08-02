@@ -5,5 +5,5 @@
         android:startColor="@color/pink_light"
         android:endColor="@color/pink_dark"/>
     <corners
-        android:radius="16dp"/>
+        android:radius="8dp"/>
 </shape>

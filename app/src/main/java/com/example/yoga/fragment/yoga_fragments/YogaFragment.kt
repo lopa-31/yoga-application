@@ -5,22 +5,22 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.yoga.R
-import com.example.yoga.databinding.FragmentYogaBinding
+import kotlinx.android.synthetic.main.fragment_yoga.*
 
 class YogaFragment : Fragment() {
-    private val binding by lazy {
-        FragmentYogaBinding.inflate(layoutInflater)
-    }
 
-   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         // Inflate the layout for this fragment
-        return binding.root
+        setHasOptionsMenu(true)
+        return inflater.inflate(R.layout.fragment_yoga, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setHasOptionsMenu(true)
-        binding.practiceYogaAsana.setOnClickListener {
+        practice_yoga_asana.setOnClickListener {
             findNavController().navigate(R.id.action_yogaFragment_to_yogaAsanaFragment)
         }
     }

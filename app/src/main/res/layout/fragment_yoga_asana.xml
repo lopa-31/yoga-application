@@ -3,9 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.yoga_fragments.YogaAsanaFragment">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_yoga_asana"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/list_item_yoga_asana"
+        android:scrollbars="vertical"/>
 </FrameLayout>

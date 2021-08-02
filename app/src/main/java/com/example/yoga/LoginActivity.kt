@@ -7,23 +7,19 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.yoga.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
+import kotlinx.android.synthetic.main.activity_login.*
 
 @Suppress("DEPRECATION")
 class LoginActivity : AppCompatActivity() {
 
     private val ACCOUNT = "account"
     private var start = 0
-
-    private val binding by lazy {
-        ActivityLoginBinding.inflate(layoutInflater)
-    }
 
     private val RC_SIGN_IN = 1
     private lateinit var mGoogleSignInClient: GoogleSignInClient
@@ -55,7 +51,7 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_login)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val gso = GoogleSignInOptions
@@ -65,11 +61,11 @@ class LoginActivity : AppCompatActivity() {
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        binding.signInButton.setOnClickListener {
+        sign_in_button.setOnClickListener {
             signIn()
         }
 
-        binding.skipButton.setOnClickListener {
+        skip_button.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             start = 1

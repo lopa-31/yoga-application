@@ -9,19 +9,46 @@
         android:id="@+id/yogaFragment"
         android:name="com.example.yoga.fragment.yoga_fragments.YogaFragment"
         android:label="Yoga"
-        tools:layout="@layout/fragment_yoga" >
+        tools:layout="@layout/fragment_yoga">
+
         <action
             android:id="@+id/action_yogaFragment_to_yogaAsanaFragment"
-            app:destination="@id/yogaAsanaFragment" />
+            app:destination="@id/yogaAsanaFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
+
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.yoga.fragment.profile_fragments.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
+
     <fragment
         android:id="@+id/yogaAsanaFragment"
         android:name="com.example.yoga.fragment.yoga_fragments.YogaAsanaFragment"
         android:label="Yoga Asanas"
-        tools:layout="@layout/fragment_yoga_asana" />
+        tools:layout="@layout/fragment_yoga_asana">
+
+        <action
+            android:id="@+id/action_yogaAsanaFragment_to_yogaAsanaDetailFragment"
+            app:destination="@id/yogaAsanaDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/yogaAsanaDetailFragment"
+        android:name="com.example.yoga.fragment.yoga_fragments.YogaAsanaDetailFragment"
+        android:label="Yoga Pose"
+        tools:layout="@layout/fragment_yoga_asana_detail">
+
+        <argument
+            android:name="pose"
+            app:argType="com.example.yoga.model.Pose" />
+    </fragment>
 </navigation>

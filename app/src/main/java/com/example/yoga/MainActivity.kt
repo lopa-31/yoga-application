@@ -9,13 +9,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.yoga.databinding.ActivityMainBinding
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val binding by lazy {
-        ActivityMainBinding.inflate(layoutInflater)
-    }
     private lateinit var mNavController: NavController
 
     private val appBarConfiguration by lazy {
@@ -26,17 +23,17 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_main)
 
-        binding.bottomNavigationView.background = null
+        bottom_navigation_view.background = null
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment_container)
                 as NavHostFragment
         mNavController = navHostFragment.findNavController()
 
-        binding.bottomNavigationView.setupWithNavController(mNavController)
+        bottom_navigation_view.setupWithNavController(mNavController)
 
-        setSupportActionBar(binding.toolbar)
+        setSupportActionBar(toolbar)
         setupActionBarWithNavController(mNavController, appBarConfiguration)
 
         mNavController.addOnDestinationChangedListener { _, destination, _ ->
@@ -49,13 +46,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showBottomBar() {
-        binding.fab.visibility = View.VISIBLE
-        binding.bottomAppBar.visibility = View.VISIBLE
+        fab.visibility = View.VISIBLE
+        bottom_app_bar.visibility = View.VISIBLE
     }
 
     private fun hideBottomBar() {
-        binding.fab.visibility = View.GONE
-        binding.bottomAppBar.visibility = View.GONE
+        fab.visibility = View.GONE
+        bottom_app_bar.visibility = View.GONE
     }
 
     override fun onSupportNavigateUp(): Boolean {
