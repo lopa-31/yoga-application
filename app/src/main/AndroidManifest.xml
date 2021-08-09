@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.yoga">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:name="android.hardware.camera.any" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:icon="@mipmap/ic_launcher_bordered_lotus"
@@ -10,21 +12,23 @@
         android:roundIcon="@mipmap/ic_launcher_bordered_lotus_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Yoga">
-
-        <activity android:name=".SplashScreenActivity"
+        <activity
+            android:name=".CameraActivity"
+            android:theme="@style/Theme.Yoga.Camera"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".SplashScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".LoginActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize">
-        </activity>
-
+            android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity android:name=".MainActivity" />
-
     </application>
+
 </manifest>

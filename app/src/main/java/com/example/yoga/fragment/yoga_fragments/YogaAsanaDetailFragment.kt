@@ -1,4 +1,4 @@
-package com.example.yoga.fragment.yoga_fragments
+    package com.example.yoga.fragment.yoga_fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.yoga.R
 import com.example.yoga.data.poses
 import com.example.yoga.model.Pose
@@ -40,6 +41,10 @@ class YogaAsanaDetailFragment : Fragment() {
             else{
                 description.text = it.description[0]
             }
+        }
+
+        try_pose.setOnClickListener {
+            findNavController().navigate(R.id.action_yogaAsanaDetailFragment_to_cameraActivity)
         }
     }
 

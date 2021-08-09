@@ -29,7 +29,7 @@
     <fragment
         android:id="@+id/yogaAsanaFragment"
         android:name="com.example.yoga.fragment.yoga_fragments.YogaAsanaFragment"
-        android:label="Yoga Asanas"
+        android:label="Asanas"
         tools:layout="@layout/fragment_yoga_asana">
 
         <action
@@ -50,5 +50,18 @@
         <argument
             android:name="pose"
             app:argType="com.example.yoga.model.Pose" />
+        <action
+            android:id="@+id/action_yogaAsanaDetailFragment_to_cameraActivity"
+            app:destination="@id/cameraActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
+
+    <activity
+        android:id="@+id/cameraActivity"
+        android:name="com.example.yoga.CameraActivity"
+        android:label="Camera"
+        tools:layout="@layout/activity_camera" />
 </navigation>

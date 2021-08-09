@@ -24,4 +24,7 @@
     <string name="benefits">Benefits:</string>
     <string name="description">Description:</string>
     <string name="search">Search</string>
+    <string name="try_pose">Try Pose</string>
+    <string name="actionbar_spinner">ActionBar Spinner</string>
+    <string name="camera_button">Camera Button</string>
 </resources>
